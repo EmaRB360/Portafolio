@@ -1010,7 +1010,7 @@ span{
         
         .home{
             flex-direction: column-reverse;
-            margin: 1rem 3.5rem;
+            margin: 5rem 3.5rem;
             gap: .1rem;
         }
 
