@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4 | Emmanuel Ramírez Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Estilos específicos para la página de proyecto */
+        .project-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-header {
+            margin-top: 9rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .project-header p {
+            font-size: 1.5rem;
+        }
+        
+        .project-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .project-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .project-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .project-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--main-color);
+        }
+        
+        .project-description {
+            margin-bottom: 2rem;
+        }
+        
+        .project-description p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .tech-stack {
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tech-stack li {
+            background-color: var(--main-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .project-gallery {
+            margin-top: 3rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-top: 2rem;
+            background-color: var(--main-color);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: 0.5s ease;
+            text-decoration: none;
+        }
+        
+        .back-to-home:hover {
+            box-shadow: none;
+        }
+        
+        @media (max-width: 768px) {
+            .project-details {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header class="header">
+        <a href="index.html" class="logo">Emmanuel
+            <span>Ramírez</span></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="index.html#projects" class="active">Projects</a>
+            </li>
+            <li>
+                <a href="index.html#contact">Contact</a>
+            </li>
+        </nav>
+        <i class='bx bxs-moon' id="mode-icon" style="font-size: 24px; cursor: pointer;"></i>
+    </header>
+
+    <section class="project-content">
+        <div class="project-header">
+            <h1>Project 4</h1>
+            <p>Software Testing Project</p>
+        </div>
+
+        <div class="project-details">
+            <div class="project-image">
+                <img src="image.jpg" alt="Project 4 main image">
+            </div>
+            <div class="project-info">
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>This project focused on implementing comprehensive testing strategies for a web application. It includes unit testing, integration testing, and end-to-end testing, ensuring software quality and reliability.</p>
+                    <p>The testing framework was designed to catch bugs early in the development process, improve code quality, and ensure a seamless user experience for the final product.</p>
+                </div>
+                
+                <div class="tech-stack">
+                    <h2>Technologies Used</h2>
+                    <ul>
+                        <li>Jest</li>
+                        <li>Cypress</li>
+                        <li>React Testing Library</li>
+                        <li>CI/CD Integration</li>
+                        <li>Test Coverage Analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="project-links">
+                    <h2>Project Links</h2>
+                    <p><a href="#" target="_blank"><i class='bx bxl-github'></i> GitHub Repository</a></p>
+                    <p><a href="#" target="_blank"><i class='bx bx-link-external'></i> Test Reports</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-gallery">
+            <h2>Project Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="image.jpg" alt="Test Coverage Report">
+                </div>
+                <div class="gallery-item">
+                    <img src="image.jpg" alt="CI/CD Pipeline">
+                </div>
+                <div class="gallery-item">
+                    <img src="image.jpg" alt="Bug Tracking Dashboard">
+                </div>
+                <div class="gallery-item">
+                    <img src="image.jpg" alt="Performance Testing Results">
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html#projects" class="back-to-home">Back to Projects</a>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+
+        <ul class="list">
+            <li>
+                <a href="#home" data-key="nav_home" data-translate="home_footer">Home</a>
+            </li>
+            <li>
+                <a href="#education" data-key="nav_education">Education</a>
+            </li>
+            <li>
+                <a href="#projects" data-key="nav_projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills" data-key="nav_skills">Skills</a>
+            </li>
+            <li>
+                                <a href="#contact" data-key="nav_contact" data-translate="contact_me_footer">Contact Me</a>
+            </li>
+        </ul>
+        <p class="copyright">
+            © Emmanuel Ramírez | All rights Reserved
+        </p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 | Emmanuel Ramírez Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Estilos específicos para la página de proyecto */
+        .project-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-header {
+            margin-top: 9rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .project-header p {
+            font-size: 1.5rem;
+        }
+        
+        .project-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .project-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .project-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .project-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--main-color);
+        }
+        
+        .project-description {
+            margin-bottom: 2rem;
+        }
+        
+        .project-description p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .tech-stack {
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tech-stack li {
+            background-color: var(--main-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .project-gallery {
+            margin-top: 3rem;
+        }
+
+        .project-gallery h2{
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-top: 2rem;
+            background-color: var(--main-color);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: 0.5s ease;
+            text-decoration: none;
+        }
+        
+        .back-to-home:hover {
+            box-shadow: none;
+        }
+        
+        @media (max-width: 768px) {
+            .project-details {
+                flex-direction: column;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                padding: 0 0.5rem;
+            }
+            
+            .gallery-item {
+                overflow: hidden;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.25rem;
+            }
+            
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+                object-fit: contain;
+                border-radius: 4px;
+            }
+            
+            .gallery-item[style*="grid-column: span 2"],
+            .gallery-item[style*="grid-column: span 4"] {
+                grid-column: 1 / -1 !important;
+                max-height: 300px;
+            }
+            
+            .gallery-item[style*="display: flex"] {
+                padding: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header class="header">
+        <a href="index.html" class="logo">Emmanuel
+            <span>Ramírez</span></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <li>
+            <a href="index.html#home" data-key="nav_home">Home</a>
+            </li>
+            <li>
+            <a href="index.html#education" data-key="nav_education">Education</a>
+            </li>
+            <li>
+            <a href="index.html#projects" data-key="nav_projects">Projects</a>
+            </li>
+            <li>
+            <a href="index.html#skills" data-key="nav_skills">Skills</a>
+            </li>
+            <li>
+            <a href="index.html#contact" data-key="nav_contact">Contact Me</a>
+            </li>
+        </nav>
+        <li>
+        <a href="#" id="language-toggle">ES</a>
+        </li>
+        <i class='bx bxs-moon' id="mode-icon" style="font-size: 24px; cursor: pointer;"></i>
+    </header>
+
+    <section class="project-content">
+        <div class="project-header">
+            <h1 data-key="p2_title">Kedema Virtual Store</h1>
+            <p data-key="p2_subtitle">A detailed showcase of my design work</p>
+        </div>
+
+        <div class="project-details">
+            <div class="project-image">
+                <img src="kedema.png" alt="Kedema Virtual Store main image">
+            </div>
+            <div class="project-info">
+                <div class="project-description">
+                    <h2 data-key="p2_overview_title">Project Overview</h2>
+                    <p data-key="p2_desc_1">Creation of materials for a virtual clothing store on Instagram, from t-shirt designs to advertising, are made with programs such as Photoshop, Premiere Pro and Illustrator.</p>
+                </div>
+                
+                <div class="tech-stack">
+                    <h2 data-key="p2_tech_title">Technologies Used</h2>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Adobe Illustrator</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-gallery">
+            <h2 data-key="p2_gallery_title">Project Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                    <img src="publicidad 2 camiseta.png" alt="Performance Metrics" style="max-width: 100%; max-height: 350px; width: auto; height: auto; display: block;">
+                </div>
+                <div class="gallery-item" style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                    <img src="logo_kedema.gif" alt="Performance Metrics" style="max-width: 100%; max-height: 350px; width: auto; height: auto; display: block;">
+                </div>
+                <div class="gallery-item" style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                    <img src="publicidad 5 camiseta.png" alt="Performance Metrics" style="max-width: 100%; max-height: 350px; width: auto; height: auto; display: block;">
+                </div>
+                <div class="gallery-item" style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                    <img src="publicidad camisetas.png" alt="Performance Metrics" style="max-width: 100%; max-height: 350px; width: auto; height: auto; display: block;">
+                </div>
+                <div class="gallery-item" style="grid-column: span 2; grid-row: span 1;">
+                    <img src="GC PUBLI INSTA.png" alt="API Architecture Diagram" style="width: 100%; height: auto; max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="gallery-item" style="grid-column: span 2; grid-row: span 1;">
+                    <img src="stickers.png" alt="API Architecture Diagram" style="width: 100%; height: auto; max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="gallery-item" style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                    <img src="presentacion camiseta lesco.png" alt="Performance Metrics" style="max-width: 100%; max-height: 300px; width: auto; height: auto; display: block;">
+                </div>
+                <div class="gallery-item" style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
+                    <img src="presentacion camiseta lesco 4.png" alt="Performance Metrics" style="max-width: 100%; max-height: 300px; width: auto; height: auto; display: block;">
+                </div>
+                <div class="gallery-item">
+                    <img src="publicidad camiseta picnic.png" alt="Gallery image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="2.png" alt="Gallery image 4">
+                </div>
+                <div class="gallery-item" style="grid-column: span 4; grid-row: span 2;">
+                    <img src="presentacion de diseños festival.png" alt="API Architecture Diagram" style="width: 100%; height: auto; max-height: 800px; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html#projects" class="back-to-home" data-key="back_to_projects">Back to Projects</a>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/emmanuel-ramírez-barquero-0a9726339"><i class='bx bxl-linkedin'></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+
+        <ul class="list">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+        <p class="copyright">
+            © Emmanuel Ramírez | All rights Reserved
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
