@@ -978,7 +978,7 @@ span{
             padding: 1.5rem;
             flex-direction: column;
             text-align: center;
-            background: var(--navbar-bg);
+            background: var(--third-color);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--navbar-border);
@@ -1118,7 +1118,7 @@ span{
 
     .contact form .input-box input,
 .contact form .input-group-2 textarea{
-    width: 90%;
+    width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--secondary-color);
@@ -1258,7 +1258,7 @@ span{
 
 @media (max-width: 480px) {
     .contact {
-        padding: 7rem 1.5rem 3rem;
+        padding: 7rem 3rem 3rem;
     }
     
     .contact input,

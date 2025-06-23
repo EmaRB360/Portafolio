@@ -167,9 +167,29 @@ document.addEventListener('DOMContentLoaded', function() {
             menuIcon.classList.toggle('bx-x');
             navbar.classList.toggle('active');
         };
+
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = document.querySelectorAll('.navbar a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Solo cerrar si el menú está abierto (en móviles)
+                if (window.innerWidth <= 991) {
+                    menuIcon.classList.remove('bx-x');
+                    navbar.classList.remove('active');
+                }
+            });
+        });
     }
 
-    // 3. Botón para cambiar el tema
+    // Cerrar menú al cambiar el tamaño de la ventana
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 991) {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+    });
+
+    // 3. Botón para cambiar el tema"
     if (themeIcon) {
         themeIcon.onclick = function() {
             const isDarkNow = document.body.classList.contains('dark-theme');
