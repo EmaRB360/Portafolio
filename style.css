@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+    font-family: 'MiFuente';
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
+}
 
 * {
     margin: 0;
@@ -29,6 +32,7 @@ html{
 }
 
 body {
+    font-family: 'MiFuente';
     transition: all 0.3s ease;
     background-image: var(--background-image, none);
     background-color: var(--primary-color);
