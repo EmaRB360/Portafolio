@@ -660,45 +660,67 @@ span{
     text-align: center;
 }
 
-.contact form {
-    max-width: 90%;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .contact .input-group {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
-    margin: 0 0 20px 0;
-    padding: 0;
+    margin: 0 auto 20px;
+    padding: 0 15px;
     width: 100%;
+    max-width: 800px;
 }
 
 .contact .input-box {
     flex: 1 1 100%;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.contact .input-box input {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .contact {
         padding: 5rem 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact form {
+        width: 100%;
+        max-width: 800px;
     }
     .contact .input-box {
         flex: 1 1 calc(50% - 8px);
         max-width: calc(50% - 8px);
+        align-items: center;
     }
 }
 
 .contact .input-group-2 {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact form .input-box input,
-.contact form .input-group-2 textarea{
+.contact form .input-group-2 textarea {
     width: 100%;
+    max-width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--secondary-color);
@@ -709,6 +731,7 @@ span{
     border-image: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255)) 1;
     box-shadow: 0 0 25px transparent;
     transition: .3s ease-in-out;
+    text-align: center;
 }
 
 .contact form .input-box input:focus,
@@ -716,15 +739,21 @@ span{
     box-shadow: 0 0 25px rgb(0, 157, 255);
 }
 
-.contact form .input-group-2 textarea{
+.contact form .input-group-2 textarea {
     resize: none;
     height: 20rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    display: block;
 }
 
-.contact form .btn{
-    width: 50%;
-    margin-top: 2rem;
+.contact form .btn {
+    width: 80%;
+    max-width: 300px;
+    margin: 2rem auto 0;
     cursor: pointer;
+    display: block;
 }
 
 .project-card:hover{
@@ -904,10 +933,11 @@ span{
         padding: 2rem 3%;
     }
     section{
-        padding: 10rem 3% 2rem;
+        padding: 1rem 3% 2rem;
     }
     .timeline-items::before{
-        left: 7px
+        left: 7px;
+        height: 65%;
     }
     .timeline-item:nth-child(odd){
         padding-right: 0;
@@ -980,20 +1010,37 @@ span{
         
         .home{
             flex-direction: column-reverse;
-            margin: 5rem 4rem;
+            margin: 1rem 3.5rem;
+            gap: .1rem;
         }
+
+    
+        .skills{
+            padding-top: 3rem;
+        }
+
+        .education{
+            padding: 3rem 3.5rem;
+        }
+
+        .projects{
+            padding: 7rem 4rem;
+        }
+
+        .contact{
+            padding: 7rem 4rem;
+        }
+        
         .home-content h3{
-            font-size: 2.6rem;
+            font-size: 2rem;
         }
+
         .home-content h1{
-            font-size: 8rem;
+            font-size: 5rem;
         }
-        .home-content p{
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        
         .home-img img{
-            width: 56vm;
+            width: 50vm;
         }
         .services h2{
             margin-bottom: 2rem;
@@ -1020,13 +1067,18 @@ span{
             grid-template-columns: repeat(1,1fr);
         }
         .projects-box img{
-            min-width: 35rem;
+            min-width: 29rem;
         }
 
+        .contact form{
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;  
+        }
 
         .project-card{
-            height: 540px;
-            width: 350px;
+            height: 500px;
+            width: 320px;
             background-color: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(30px);
             border: 2px solid var(--main-color);
@@ -1036,19 +1088,26 @@ span{
             align-items: center;
             justify-content: center;
             text-align: center;
-            gap: 2rem;
-            padding: 2rem 2rem;
+            gap: 1rem;
+            padding: 1rem 1rem;
             overflow: hidden;
             cursor: pointer;
             box-shadow: 0 0 5px var(--main-color);
             transition: 0.4s ease;
         }
 
+        .project-card p{
+            font-size: 1.9rem;
+        }
+
         .contact .btn {
         width: 80%;
         padding: 1rem;
         font-size: 1.5rem;
+        display: block;
+        margin: 0 auto;
     }
+    
 
 
 

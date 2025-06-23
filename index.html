@@ -177,25 +177,62 @@
     <section class="contact" id="contact">
                 <h2 class="heading" data-key="contact_title" data-translate="contact_me_title">Contact <span>Me</span></h2>
 
-        <form id="contactForm" onsubmit="sendEmail(event); return false;">
+        <form id="contactForm" onsubmit="return validateForm(event);">
             <div class="input-group">
                 <div class="input-box">
-                    <input type="text" name="from_name" placeholder="Full Name" data-key="contact_fullname" data-translate="full_name_placeholder">
-                    <input type="email" name="reply_to" placeholder="Email" data-key="contact_email" data-translate="email_placeholder">
+                    <input type="text" name="from_name" placeholder="Full Name" data-key="contact_fullname" data-translate="full_name_placeholder" required>
+                    <input type="email" name="reply_to" placeholder="Email" data-key="contact_email" data-translate="email_placeholder" required>
                 </div>
                 <div class="input-box">
-                    <input type="tel" name="phone" placeholder="Phone Number" data-key="contact_phone">
-                    <input type="text" name="subject" placeholder="Subject" data-key="contact_subject">
+                    <input type="tel" name="phone" placeholder="Phone Number" data-key="contact_phone" required>
+                    <input type="text" name="subject" placeholder="Subject" data-key="contact_subject" required>
                 </div>
             </div>
             <div class="input-group-2">
-                <textarea name="message" cols="30" rows="10" placeholder="Your Message" data-key="contact_message" data-translate="your_message_placeholder"></textarea>
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" data-key="contact_message" data-translate="your_message_placeholder" required></textarea>
                 <input type="submit" value="Send Message" class="btn" data-key="contact_send_button" data-translate="send_message_button">
             </div>
             <p id="form-message" style="display: none; margin-top: 10px; padding: 10px; border-radius: 5px; text-align: center;"></p>
         </form>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <script>
+            // Función para validar el formulario
+            function validateForm(event) {
+                event.preventDefault();
+                
+                // Obtener referencias a los campos del formulario
+                const form = document.getElementById('contactForm');
+                const formData = new FormData(form);
+                let isValid = true;
+                
+                // Validar que todos los campos requeridos estén completos
+                form.querySelectorAll('[required]').forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = '#ff0000';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+                
+                // Si el formulario es válido, enviar el correo
+                if (isValid) {
+                    sendEmail(event);
+                } else {
+                    const messageElement = document.getElementById('form-message');
+                    messageElement.textContent = 'Por favor completa todos los campos requeridos.';
+                    messageElement.style.display = 'block';
+                    messageElement.style.color = '#ff0000';
+                    
+                    // Ocultar el mensaje después de 3 segundos
+                    setTimeout(() => {
+                        messageElement.style.display = 'none';
+                    }, 3000);
+                }
+                
+                return false;
+            }
+            
             // Inicializar EmailJS con tu User ID (reemplaza con tu ID)
             (function() {
                 emailjs.init('Iqay9IMcdo3kQDNXM');
