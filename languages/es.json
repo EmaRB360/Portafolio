@@ -47,6 +47,7 @@
     "p1_desc_2": "Este sistema está especialmente diseñado para empresas que ofrecen servicios de contabilidad y es completamente multi-empresa, lo que le permite gestionar eficientemente las planillas de múltiples clientes desde una única plataforma. El software consiste en el desarrollo de un Sistema de Planillas Integral que se integra con el sistema contable basado en PostgreSQL y el sistema de vacaciones existente. Se utilizó Figma para crear la propuesta del sistema.",
     "p1_desc_3": "Resumen de la empresa: Empresa de outsourcing especializada en el desarrollo de software.<br> • Desarrollé un sistema de planillas utilizando PHP y el framework Laravel, incorporando la librería Moonshine.<br> • Apliqué la arquitectura MVC gestionando rutas, controladores, modelos y recursos.<br> • Realicé operaciones básicas con bases de datos PostgreSQL, incluyendo consultas y modificaciones a través de phpMyAdmin.<br> • Me especialicé en el desarrollo FrontEnd y la estructuración de proyectos mientras colaboraba con los miembros del equipo utilizando la metodología Scrum para una comunicación y desarrollo de proyectos efectivos.",
     "p1_tech_title": "Tecnologías Utilizadas",
+    "p1_methodology_title": "Metodología",
     "back_to_projects": "Volver a Proyectos",
     "p2_title": "Tienda Virtual Kedema",
     "p2_subtitle": "Una muestra detallada de mi trabajo de diseño",
