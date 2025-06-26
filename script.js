@@ -1,6 +1,5 @@
-// =================================================================
+
 // FUNCIÓN PARA CAMBIAR EL TEMA (CLARO/OSCURO)
-// =================================================================
 function setTheme(isDark, iconElement) {
     if (iconElement) {
         if (isDark) {
@@ -13,9 +12,8 @@ function setTheme(isDark, iconElement) {
     }
 }
 
-// =================================================================
+
 // FUNCIÓN PARA CAMBIAR EL IDIOMA Y ACTUALIZAR EL CONTENIDO
-// =================================================================
 async function changeLanguage(language) {
     try {
         const response = await fetch(`languages/${language}.json`);
@@ -94,7 +92,7 @@ async function changeLanguage(language) {
         // Actualizar el enlace de descarga del CV
         const downloadBtn = document.getElementById('download_cv');
         if (downloadBtn) {
-            const cvFile = language === 'en' ? 'CV_English.pdf' : 'CV_Español.pdf';
+            const cvFile = language === 'en' ? 'CV_Emmanuel_Ramirez.pdf' : 'CV_Emmanuel_Ramirez_B.pdf';
             downloadBtn.setAttribute('href', cvFile);
             downloadBtn.setAttribute('download', cvFile);
         }
