@@ -910,6 +910,25 @@ span{
     color: var(--secondary-color);
 }
 
+.tech-stack {
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tech-stack li {
+            background-color: var(--main-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 1.5rem;
+        }
 
 @media(max-width:1285px){
     html{
