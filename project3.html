@@ -149,8 +149,34 @@
         .back-to-home:hover {
             box-shadow: none;
         }
-        
+
+        .gallery-item .btn-view-page {
+            display: inline-block;
+            padding: 0.85rem 2.2rem;
+            font-size: 1.45rem;
+            letter-spacing: 0.08rem;
+            white-space: nowrap;
+            background: var(--main-color);
+            color: var(--primary-color);
+            box-shadow: 0 0 18px var(--main-color);
+            border-radius: 4rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: 0.3s ease-in-out;
+        }
+
+        .gallery-item .btn-view-page:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 32px var(--main-color);
+        }
+
         @media (max-width: 768px) {
+            .gallery-item .btn-view-page {
+                padding: 0.75rem 1.6rem;
+                font-size: 1.3rem;
+            }
+
             .project-details {
                 flex-direction: column;
             }
@@ -246,8 +272,9 @@
                 <div class="gallery-item" style="display: flex; justify-content: center; align-items: center; padding: 1rem;">
                     <img src="promec.gif" alt="Performance Metrics" style="max-width: 100%; max-height: 300px; width: auto; height: auto; display: block;">
                 </div>
-                <div class="gallery-item" style="grid-column: span 2; grid-row: span 2; display: flex; justify-content: center; align-items: center; padding: 2rem;">
+                <div class="gallery-item" style="grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; gap: 0.35rem;">
                     <img src="pagina.gif" alt="Performance Metrics" style="max-width: 100%; max-height: 1200px; width: auto; height: auto; display: block;">
+                    <a href="https://sites.google.com/una.cr/fortalecimientoperfildocente/inicio?authuser=0" class="btn-view-page" data-key="p3_view_page" target="_blank" rel="noopener noreferrer">View page</a>
                 </div>
             </div>
         </div>
